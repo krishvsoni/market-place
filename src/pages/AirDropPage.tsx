@@ -22,7 +22,7 @@ const TokenAirdropPage = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'https://350f-2401-4900-555b-bafd-1caa-9e37-14a7-ca18.ngrok-free.app/airdrop',
+        'https://0725-2401-4900-555b-bafd-1caa-9e37-14a7-ca18.ngrok-free.app/airdrop',
         { walletaddress: localStorage.getItem('walletAddress'), amount: Math.ceil(Math.random() * 100) }
       );
       console.log(response.data);
