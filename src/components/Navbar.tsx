@@ -35,7 +35,7 @@ export default function Navbar() {
     <nav className="bg-green-800 text-white py-4 px-6">
       <div className="container mx-auto flex flex-row md:flex-row justify-between items-center">
         {/* Logo */}
-        <div className="text-2xl font-bold mb-4 md:mb-0" onClick={()=>{navigate('/'}>Sustain Scan</div>
+        <div className="text-2xl font-bold mb-4 md:mb-0" onClick={()=>{navigate('/'}}>Sustain Scan</div>
 
         {/* Hamburger Menu (Mobile View) */}
         <button
