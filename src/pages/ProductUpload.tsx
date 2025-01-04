@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
 declare global {
   interface Window {
@@ -10,6 +12,7 @@ declare global {
 const ProductUpload = () => {
   const [walletAddress, setWalletAddress] = useState('');
   const [isMetaMaskInstalled, setIsMetaMaskInstalled] = useState(false);
+  const navigate = useNavigate();
   const [productData, setProductData] = useState({
     name: '',
     description: '',
@@ -30,6 +33,9 @@ const ProductUpload = () => {
         image: productData.image,
       }
     );
+    if(response){
+      navigate('/airdroptoken')
+    }
     console.log(response.data);
   };
 
@@ -80,6 +86,9 @@ const ProductUpload = () => {
   };
 
   return (
+
+    <>
+    <Navbar/>
     <div className="min-h-screen bg-gradient-to-b from-green-50 to-green-100 flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
         <h1 className="text-2xl font-bold text-green-800 mb-6">Upload Product</h1>
@@ -176,6 +185,7 @@ const ProductUpload = () => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 

@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [walletAddress, setWalletAddress] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedAddress = localStorage.getItem("walletAddress");
@@ -34,6 +36,12 @@ export default function Navbar() {
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-2xl font-bold">Sustain Scan</div>
         <div className="flex items-center space-x-4">
+          <button className="flex flex-col justify-center items-center bg-white text-green-500 py-2 rounded-xl px-4 font-semibold" onClick={() => navigate('/productupload')}>
+            Upload Product
+          </button>
+          <button className="flex flex-col justify-center items-center bg-white text-green-500 py-2 rounded-xl px-4 font-semibold" onClick={() => navigate('/products')}>
+            See all Projects
+          </button>
           <button
             onClick={connectWallet}
             className="bg-white text-green-800 font-semibold py-2 px-4 rounded-lg hover:bg-gray-200"
