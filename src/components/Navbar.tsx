@@ -9,6 +9,7 @@ export default function Navbar() {
       setWalletAddress(storedAddress);
     }
   }, []);
+  
 
   const connectWallet = async () => {
     // @ts-ignore
